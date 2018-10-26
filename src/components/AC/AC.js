@@ -87,11 +87,9 @@ const Example = () => (
         )
       }}
       /> */}
-
       {/* 
       (1)(2)写法的原因: component是使用 React.createElement to create a new React element 
       you would create a new component every render。
-
       但是render不再需要重新挂载，而是根据shouldcomponentUpdate调用组件的render()方法。render后面需要返回元素。 
       */}
     </div>
