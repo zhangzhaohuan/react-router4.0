@@ -14,25 +14,20 @@ export default class RouteInterceptor extends Component {
   }
   
   static getDerivedStateFromProps(nextProps, prevState) {
-    console.log('in');
-    
-    console.log(localStorage.getItem('isLogin'));
-    
     return {
       isLogin: localStorage.getItem('isLogin')
     };
   } 
 
   render() {
-    console.log(this.state.isLogin);
-    
+
     const { component: Component, ...rest } = this.props;
     return (
       <div>
         <Route
           {...rest}
           render={props =>
-            this.state.isLogin ? (
+            this.state.isLogin=='true' ? (
               <Component {...props} />
             ) : (
                 <Redirect
